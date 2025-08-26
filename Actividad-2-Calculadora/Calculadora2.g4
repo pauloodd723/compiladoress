@@ -24,3 +24,6 @@ NUMBER  : [0-9]+ ('.' [0-9]+)? ;
 ID      : [a-zA-Z]+ ;
 NEWLINE : '\r'? '\n' ;
 WS      : [ \t]+ -> skip ;
+
+/*comandos: antlr4 -Dlanguage=Python3 Calculadora2.g4
+            antlr4-parse Calculadora2.g4 prog -tokens < test.txt */
