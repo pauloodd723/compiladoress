@@ -1,0 +1,13 @@
+ITEM_ID,Nombre,propiedad,valor
+1,Mano,Fuerza,1
+2,Madera,Resistencia,1
+3,PicoMadera,Fuerza,2
+4,Piedra,Resistencia,2
+5,PicoPiedra,Fuerza,3
+6,Cobre,Resistencia,3
+7,PicoCobre,Fuerza,4
+8,Hierro,Resistencia,4
+9,PicoHierro,Fuerza,5
+10,Diamante,Resistencia,5
+11,PicoDiamante,Fuerza,6
+12,Netherite,Resistencia,6

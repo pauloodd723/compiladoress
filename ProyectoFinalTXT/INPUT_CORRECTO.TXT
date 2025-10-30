@@ -1,0 +1,77 @@
+// CÓDIGO SEMÁNTICAMENTE VÁLIDO (Compilación exitosa garantizada)
+
+// --- FASE DE INICIO (Mano) ---
+escena inicio {
+    decir "Estás en el mundo. Tienes tu Mano (Fuerza 1).";
+    opcion "Picar Árbol (Resistencia 1)" ir_a picar_madera_obtiene_pico; // VÁLIDO (1 >= 1)
+    opcion "Terminar" ir_a fin_juego;
+}
+
+// 1. Obtener Pico Madera (Fuerza 2)
+escena picar_madera_obtiene_pico {
+    decir "Madera obtenida. Ahora obtienes PicoMadera.";
+    obtener_item PicoMadera; // Estado: PicoMadera (Fuerza 2)
+    opcion "Continuar a Nivel 2" ir_a mineria_nivel_2; 
+    opcion "Volver" ir_a inicio;
+}
+
+// 2. Minería Nivel 2 (Con Pico Madera)
+escena mineria_nivel_2 {
+    decir "Tienes tu PicoMadera (Fuerza 2). ¿Qué vas a picar?";
+    opcion "Picar Piedra (Resistencia 2)" ir_a picar_piedra_obtiene_pico; // VÁLIDO (2 >= 2)
+    opcion "Volver" ir_a inicio;
+}
+
+// 3. Obtener Pico Piedra (Fuerza 3)
+escena picar_piedra_obtiene_pico {
+    decir "Piedra obtenida. ¡Es hora de mejorar tu pico!";
+    obtener_item PicoPiedra; // Estado: PicoPiedra (Fuerza 3)
+    opcion "Ir a Menú Nivel 3" ir_a mineria_nivel_3;
+    opcion "Volver" ir_a inicio;
+}
+
+// 4. Minería Nivel 3 (Con Pico Piedra)
+escena mineria_nivel_3 {
+    decir "Tienes tu PicoPiedra (Fuerza 3). ¿Qué vas a picar?";
+    opcion "Picar Cobre (Resistencia 3)" ir_a picar_cobre_obtiene_pico; // VÁLIDO (3 >= 3)
+    opcion "Volver" ir_a inicio;
+}
+
+// 5. Obtener Pico Cobre (Fuerza 4)
+escena picar_cobre_obtiene_pico {
+    decir "Cobre obtenido. ¡Tienes el PicoCobre!";
+    obtener_item PicoCobre; 
+    opcion "Picar Hierro (Resistencia 4)" ir_a picar_hierro_obtiene_pico; // VÁLIDO (4 >= 4)
+    opcion "Volver" ir_a inicio;
+}
+
+// 6. Obtener Pico Hierro (Fuerza 5)
+escena picar_hierro_obtiene_pico {
+    decir "Hierro obtenido. ¡Tienes el PicoHierro!";
+    obtener_item PicoHierro; 
+    opcion "Picar Diamante (Resistencia 5)" ir_a picar_diamante_obtiene_pico; // VÁLIDO (5 >= 5)
+    opcion "Volver" ir_a inicio;
+}
+
+// 7. Obtener Pico Diamante (Fuerza 6)
+escena picar_diamante_obtiene_pico {
+    decir "¡Diamante obtenido!";
+    obtener_item PicoDiamante; 
+    opcion "Picar Netherite (Resistencia 6)" ir_a picar_netherite; // VÁLIDO (6 >= 6)
+    opcion "Volver" ir_a inicio;
+}
+
+// 8. Final
+escena picar_netherite {
+    decir "¡Felicidades! Has obtenido el material más fuerte del juego: Netherite.";
+    opcion "Finalizar Juego" ir_a juego_terminado;
+}
+
+// --- ESCENAS TERMINALES ---
+escena juego_terminado {
+    decir "¡TE PASASTE EL JUEGO! La Netherite es tuya.";
+}
+
+escena fin_juego {
+    decir "El juego ha terminado.";
+}

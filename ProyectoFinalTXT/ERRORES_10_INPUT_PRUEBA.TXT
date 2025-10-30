@@ -1,0 +1,56 @@
+// --- COMPILADOR MINECRAFT NARRATIVO: PRUEBA DE 10 ERRORES ---
+
+// FASE 1 (LÉXICA) - 2 ERRORES
+escena @inicio { // E01: Carácter inválido @
+    decir "No puedes usar este simbolo @.";
+    opcion "Test" ir_a prueba_a; 
+}
+escena e_lexico_2 {
+    decir "Error: 1No puedes iniciar un ID con numero."; // E02: ID de escena inválido (sintáctico, pero se detecta por Lexer al no tener un token 'escena')
+    opcion "Ok" ir_a fin_juego; 
+}
+
+
+// FASE 2 (SINTÁCTICA) - 4 ERRORES
+escena e_sintactico_1 {
+    decir "Falta el punto y coma" // E03: Falta el SEMI (;)
+}
+escena e_sintactico_2 {
+    decir "Falta la llave final de la escena";
+    opcion "Continuar" ir_a fin_juego;
+// E04: Falta RBRACE (})
+escena e_sintactico_3 {
+    decir "Falta la palabra clave despues de opcion"
+    opcion "Mal formado" ir_a ; // E05: Falta ID después de ir_a
+}
+escena e_sintactico_4 {
+    opcion "Ir" ir_a fin_juego; // E06: No tiene llave de apertura {
+}
+
+
+// FASE 3 (SEMÁNTICA) - 4 ERRORES
+escena inicio_semantico {
+    decir "Prueba de errores semánticos.";
+    obtener_item PicoMadera; // Estado: Fuerza 2
+    opcion "Referencia Rota" ir_a escena_fantasma; // E07: Escena inexistente
+    opcion "Redeclaracion" ir_a inicio_semantico;
+}
+escena inicio_semantico { // E08: Redeclaración de escena
+    decir "Segundo intento de inicio_semantico.";
+}
+escena e_semantico_3 {
+    decir "Prueba de Pico Insuficiente (Error Semántico Avanzado).";
+    obtener_item PicoMadera; 
+    opcion "Picar Netherite" ir_a picar_netherite; // E09: Fuerza 2 < Resistencia 6
+}
+escena e_semantico_4 {
+    decir "Error Semántico: Pico de Resistencia (El más difícil de detectar).";
+    opcion "Picar Diamante" ir_a picar_diamante; // E10: El Visitor asume Mano (Fuerza 1) si no hay obtener_item previo.
+}
+
+
+// --- ESCENAS VÁLIDAS REQUERIDAS POR EL CÓDIGO ---
+// (Estas deben existir para que el error E09 no se convierta en una simple referencia rota)
+escena picar_netherite { decir "Netherite ok"; }
+escena picar_diamante { decir "Diamante ok"; }
+escena fin_juego { decir "Juego terminado."; }
