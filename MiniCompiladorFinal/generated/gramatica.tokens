@@ -1,0 +1,17 @@
+T__0=1
+T__1=2
+T__2=3
+ESCENA=4
+DECIR=5
+OPCION=6
+IR_A=7
+ID=8
+STRING=9
+WS=10
+'{'=1
+'}'=2
+';'=3
+'escena'=4
+'decir'=5
+'opcion'=6
+'ir_a'=7

@@ -1,0 +1,9 @@
+escena inicio {
+    decir "Exploras una mina abandonada.";
+    opcion "Encender antorcha" ir_a tunel;
+    opcion "Retroceder" ir_a bosque;
+}
+
+escena tunel {
+    decir "Encuentras diamantes!";
+}

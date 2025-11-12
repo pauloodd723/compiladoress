@@ -1,0 +1,8 @@
+escena inicio {
+    decir "Te despiertas en una montaña nevada.";
+    opcion "Bajar por el sendero" ir_a valle;
+}
+
+escena valle {
+    decir "El valle está cubierto de nieve.";
+}

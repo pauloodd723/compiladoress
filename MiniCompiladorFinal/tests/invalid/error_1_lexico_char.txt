@@ -1,0 +1,4 @@
+escena inicio {
+    decir "Bienvenido al mundo de Minecraft!";
+    opcion "Comenzar aventura" ir_a bosque$;
+}

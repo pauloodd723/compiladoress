@@ -1,0 +1,9 @@
+escena inicio {
+    decir "Comienzas tu aventura en Minecraft.";
+    opcion "Ir al bosque" ir_a bosque;
+    opcion "Ir al desierto" ir_a desierto;
+}
+
+escena desierto {
+    decir "El sol quema y el calor es intenso.";
+}

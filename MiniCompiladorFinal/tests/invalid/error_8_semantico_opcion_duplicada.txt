@@ -1,0 +1,5 @@
+escena inicio {
+    decir "Hola!";
+    opcion "Ir al bosque" ir_a bosque;
+    opcion "Ir al bosque" ir_a bosque;
+}

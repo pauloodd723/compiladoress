@@ -1,0 +1,13 @@
+escena inicio {
+    decir "Bienvenido al mundo de Minecraft!";
+    opcion "Comenzar aventura" ir_a bosque;
+}
+
+escena bosque {
+    decir "Estás en un bosque lleno de árboles.";
+    opcion "Cortar madera" ir_a mina;
+}
+
+escena mina {
+    decir "Has encontrado una cueva con minerales.";
+}

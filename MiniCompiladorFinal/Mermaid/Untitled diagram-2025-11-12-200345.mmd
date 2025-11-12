@@ -1,0 +1,37 @@
+flowchart TD
+    A["Archivo .txt de entrada (diálogo de Minecraft)"] --> B["Análisis Léxico - tokeniza comandos: escena, decir, opcion, ir_a"]
+    B --> |"Tokens válidos"| C["Análisis Sintáctico - genera árbol sintáctico"]
+    B --> |"Error léxico"| LEX_ERROR["Error Léxico - mostrar en terminal"]
+    C --> |"Árbol Sintáctico generado"| D["Análisis Semántico - verifica duplicados y reglas de Minecraft"]
+    C --> |"Error sintáctico"| SYN_ERROR["Error Sintáctico - mostrar en terminal"]
+    D --> |"Chequeo correcto"| E["Generación TAC - instrucciones intermedias del juego"]
+    D --> |"Error semántico"| SEM_ERROR["Error Semántico - mostrar en terminal"]
+    E --> F["Generación de código Python - scripts para ejecutar juego Minecraft"]
+    F --> G["Ejecución del juego Python - interacción de jugador con escenas y opciones"]
+
+    %% Detalles Léxico
+    subgraph LEX ["Análisis Léxico"]
+        B1["Lexer - reconoce palabras clave y símbolos"]
+        B2["Tokens - lista de tokens válidos"]
+        B1 --> B2
+    end
+
+    %% Detalles Sintáctico
+    subgraph SYN ["Análisis Sintáctico"]
+        C1["Parser - estructura jerárquica de escenas y diálogos"]
+        C2["Árbol Sintáctico - representación en árbol"]
+        C1 --> C2
+    end
+
+    %% Detalles Semántico
+    subgraph SEM ["Análisis Semántico"]
+        D1["Symbol Table - guarda escenas y IDs únicos"]
+        D2["Visitor - verifica duplicados de escena y opciones, relaciones entre escenas"]
+        D1 --> D2
+        D2 --> D
+    end
+
+    %% Errores
+    LEX_ERROR -.-> Z["Mostrar error en terminal"]
+    SYN_ERROR -.-> Z
+    SEM_ERROR -.-> Z

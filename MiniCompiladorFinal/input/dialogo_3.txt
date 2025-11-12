@@ -1,0 +1,9 @@
+escena inicio {
+    decir "Llegas a un río.";
+    opcion "Nadar" ir_a isla;
+    opcion "Construir puente" ir_a bosque;
+}
+
+escena isla {
+    decir "Has llegado a una isla misteriosa.";
+}

@@ -1,0 +1,8 @@
+escena inicio {
+    decir "Estás en la playa.";
+    opcion "Construir barco" ir_a mar;
+}
+
+escena mar {
+    decir "El mar está tranquilo y azul.";
+}

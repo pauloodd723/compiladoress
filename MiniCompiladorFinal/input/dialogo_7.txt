@@ -1,0 +1,13 @@
+escena inicio {
+    decir "Llegas a un desierto.";
+    opcion "Buscar oasis" ir_a oasis;
+    opcion "Seguir caminando" ir_a templo;
+}
+
+escena oasis {
+    decir "Encuentras agua y palmeras.";
+}
+
+escena templo {
+    decir "Un templo antiguo aparece frente a ti.";
+}

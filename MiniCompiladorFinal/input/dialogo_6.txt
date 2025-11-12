@@ -1,0 +1,8 @@
+escena inicio {
+    decir "Te adentras en una cueva oscura.";
+    opcion "Explorar" ir_a caverna;
+}
+
+escena caverna {
+    decir "Hay murciélagos por todos lados.";
+}

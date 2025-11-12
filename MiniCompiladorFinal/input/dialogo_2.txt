@@ -1,0 +1,14 @@
+escena inicio {
+    decir "Despiertas en una villa.";
+    opcion "Hablar con aldeano" ir_a plaza;
+}
+
+escena plaza {
+    decir "El aldeano te ofrece una misión.";
+    opcion "Aceptar misión" ir_a bosque;
+    opcion "Rechazar" ir_a casa;
+}
+
+escena casa {
+    decir "Te quedas en casa descansando.";
+}

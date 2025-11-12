@@ -1,0 +1,4 @@
+escena inicio {
+    decir "Hola!";
+    opcion "Ir a la karmaland" ir_a_karmaland;
+}

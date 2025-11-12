@@ -1,0 +1,9 @@
+escena inicio {
+    decir "Entras a un poblado de aldeanos.";
+    opcion "Comprar herramientas" ir_a tienda;
+    opcion "Salir corriendo" ir_a bosque;
+}
+
+escena tienda {
+    decir "La tienda tiene de todo.";
+}
