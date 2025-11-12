@@ -1,0 +1,90 @@
+// --- ARCHIVO PARA PRUEBA DE FALLO MASIVO (10 ERRORES) ---
+// El compilador debe detectar y reportar todos estos fallos antes de generar el código.
+
+// === PRUEBA 1: ERROR LÉXICO (FASE 1) ===
+// ❌ E01: Carácter inválido
+escena @error_lexico { 
+    decir "El compilador debe fallar aqui por el simbolo @.";
+    opcion "Salir" ir_a fin_error;
+}
+
+
+// === PRUEBA 2: ERROR SINTÁCTICO (FASE 2 - Falta de ';') ===
+escena error_sintactico_1 {
+    decir "Falta el punto y coma" // ❌ E02: Falta SEMI (;) al final de la sentencia
+    opcion "Continuar" ir_a fin_error;
+}
+
+
+// === PRUEBA 3: ERROR SINTÁCTICO (FASE 2 - Falta de '}’ ) ===
+escena error_sintactico_2 {
+    decir "Falta la llave al final";
+    opcion "Salir" ir_a fin_error;
+// ❌ E03: Falta RBRACE (})
+}
+
+
+// === PRUEBA 4: ERROR SINTÁCTICO (FASE 2 - ID malformado en opción) ===
+escena error_sintactico_3 {
+    decir "Falta el ID después de ir_a.";
+    opcion "Mal formado" ir_a ; // ❌ E04: Falta ID después de ir_a
+}
+
+
+// === PRUEBA 5: ERROR LÉXICO (FASE 1 - ID con número al inicio) ===
+escena inicio_5 {
+    decir "Comprobando ID inválido: 4Pico.";
+    obtener_item 4PicoMadera; // ❌ E05: Falla Léxica/Sintáctica (ID no puede empezar con número)
+    opcion "Salir" ir_a fin_error;
+}
+
+
+// === PRUEBA 6: ERROR SEMÁNTICO (FASE 3 - Referencia Rota) ===
+escena error_semantico_1 {
+    decir "Prueba de referencia rota.";
+    opcion "Ir a Fantasma" ir_a escena_fantasma; // ❌ E06: 'escena_fantasma' no existe en la Tabla de Símbolos
+}
+
+
+// === PRUEBA 7: ERROR SEMÁNTICO (FASE 3 - Redeclaración) ===
+escena inicio_redeclaracion {
+    decir "Declaración original.";
+    opcion "Continuar" ir_a fin_error;
+}
+escena inicio_redeclaracion { // ❌ E07: 'inicio_redeclaracion' ya fue declarada
+    decir "Redeclaración prohibida.";
+}
+
+
+// === PRUEBA 8: ERROR SEMÁNTICO (FASE 3 - Regla de Minería) ===
+escena error_mineria_2 {
+    obtener_item PicoMadera; 
+    opcion "Picar Diamante" ir_a picar_diamante_obtiene_pico; // ❌ E08: Falla Semántica Avanzada (PicoMadera Fza 2 < Diamante Res 5)
+}
+escena picar_diamante_obtiene_pico {
+    decir "No alcanzable.";
+}
+
+
+// === PRUEBA 9: ERROR SEMÁNTICO (Fase 3 - Regla de Minería [Mano]) ===
+escena error_mineria_mano {
+    decir "Prueba de Pico Insuficiente (Mano).";
+    opcion "Picar Netherite" ir_a picar_netherite; // ❌ E09: Falla Semántica (Mano Fza 1 < Netherite Res 6)
+}
+escena picar_netherite {
+    decir "Netherite inalcanzable.";
+}
+
+
+// === PRUEBA 10: ERROR SINTÁCTICO (Fase 2 - Bloque Mal Cerrado) ===
+escena error_sintactico_4 {
+    decir "Última prueba de sintaxis.";
+    opcion "Salir" ir_a fin_error
+// ❌ E10: Falta el SEMI (;) de la opción y la llave (}) del final
+}
+
+
+// --- ESCENA DE CIERRE NECESARIA ---
+escena fin_error {
+    decir "Fin de pruebas de error.";
+}

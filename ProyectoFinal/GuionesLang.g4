@@ -7,7 +7,7 @@ scene      : ESCENA ID LBRACE dialogue+ RBRACE ;
 // Reglas de Diálogo (Acciones del juego)
 dialogue   : SAY STRING SEMI 
            | OPTION STRING GOTO ID SEMI 
-           | OBTENER_ITEM ID SEMI  // Acción para actualizar el inventario/estado
+           | OBTENER_ITEM ID SEMI  // Lógica de obtención de Ítem/Pico
            ;
 
 // --- REGLAS LÉXICAS (Lexer) ---
