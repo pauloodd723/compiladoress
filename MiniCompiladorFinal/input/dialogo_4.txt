@@ -1,9 +1,13 @@
 escena inicio {
-    decir "Exploras una mina abandonada.";
-    opcion "Encender antorcha" ir_a tunel;
-    opcion "Retroceder" ir_a bosque;
+    decir "LLegamos a una mina abandonada.";
+    opcion "encender antorcha" ir_a tunel;
 }
 
 escena tunel {
-    decir "Encuentras diamantes!";
+    decir "Encontramos un tunel con vias de vagonetas! y si nos subimos a una vagoneta?";
+    opcion "subirte" ir_a vagoneta;
+}
+
+escena vagoneta {
+    decir "Llegamos a una cueva con enemigos!!!!";
 }

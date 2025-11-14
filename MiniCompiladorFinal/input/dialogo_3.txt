@@ -1,9 +1,19 @@
 escena inicio {
-    decir "Llegas a un río.";
-    opcion "Nadar" ir_a isla;
-    opcion "Construir puente" ir_a bosque;
+    decir "Ya hemos descansando, que tal si vamos a explorar!... Llegas a un río.";
+    opcion "nadar" ir_a isla;
+    opcion "construir puente" ir_a isla2;
 }
 
 escena isla {
-    decir "Has llegado a una isla misteriosa.";
+    decir "Has llegado a una isla misteriosa pero muy cansado por nadar.";
+    opcion "comer" ir_a coco;
+}
+
+escena isla2 {
+    decir "Hemos llegado a la isla depues de 3 años construyendo el puente.";
+    opcion "comer" ir_a coco;
+}
+
+escena coco {
+    decir "Mientras buscamos un comida es mejor comer este coco, Wilson?";
 }

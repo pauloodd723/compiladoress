@@ -1,13 +1,18 @@
 escena inicio {
-    decir "Bienvenido al mundo de Minecraft!";
-    opcion "Comenzar aventura" ir_a bosque;
+    decir "Bienvenido al mundo de Minecraft!, Comenzamos esta aventura?";
+    opcion "si" ir_a bosque;
 }
 
 escena bosque {
-    decir "Estás en un bosque lleno de árboles.";
-    opcion "Cortar madera" ir_a mina;
+    decir "Estás en un bosque lleno de árboles, cortamos algunos?";
+    opcion "talar" ir_a pico;
 }
 
-escena mina {
-    decir "Has encontrado una cueva con minerales.";
+escena pico {
+    decir "Has conseguido las herramientas basicas, felicidades...Espera escucho algo quedate quieto (quedarse quieto (presiona: x))";
+    opcion "x" ir_a aldea;
+}
+
+escena aldea {
+    decir "Que paso? quede noqueado, donde estoy?"
 }

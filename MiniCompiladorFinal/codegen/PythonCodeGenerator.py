@@ -21,7 +21,7 @@ class PythonCodeGenerator:
             self.indent_level -= 1
 
     def generate(self):
-        self.emit("# --- Código Python Generado Automáticamente ---\n")
+        self.emit("# --- Código Python Generado ---\n")
 
         # Generar funciones de escenas
         scene_functions = {}
@@ -57,9 +57,9 @@ class PythonCodeGenerator:
         self.emit("if __name__ == '__main__':")
         self.indent()
         first_scene = list(scene_functions.keys())[0]
-        self.emit("print('--- Iniciando Juego ---')")
+        self.emit("print('--- Iniciando Capitulo ---')")
         self.emit(f"{first_scene}()")
-        self.emit("print('--- Fin del Juego ---')")
+        self.emit("print('--- Fin del Capitulo ---')")
         self.dedent()
 
         return "\n".join(self.python_code)

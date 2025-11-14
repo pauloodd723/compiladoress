@@ -1,12 +1,16 @@
 escena inicio {
-    decir "Despiertas en una villa.";
-    opcion "Hablar con aldeano" ir_a plaza;
+    decir "Aldeano: Estas en una aldea, alguien te dio un golpe en la cabeza y te encontre en la mitad de la nada...";
+    opcion "hablar con aldeano" ir_a plaza;
 }
 
 escena plaza {
-    decir "El aldeano te ofrece una misión.";
-    opcion "Aceptar misión" ir_a bosque;
-    opcion "Rechazar" ir_a casa;
+    decir "El aldeano te da un recorrido y quiere que escuches una propuesta de mision";
+    opcion "escuchar mision" ir_a bosque;
+}
+
+escena bosque {
+    decir "Encontraras un gran tesoro ahi, que dices? (estamos muy cansados)";
+    opcion "rechazar" ir_a casa;
 }
 
 escena casa {

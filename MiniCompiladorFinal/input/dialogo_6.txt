@@ -1,8 +1,13 @@
 escena inicio {
-    decir "Te adentras en una cueva oscura.";
-    opcion "Explorar" ir_a caverna;
+    decir "Hemos cultivado las suficientes papas, queremos venderlas?";
+    opcion "vender" ir_a mercader;
 }
 
-escena caverna {
-    decir "Hay murciélagos por todos lados.";
+escena mercader {
+    decir "Aldeano: Cuantas papas amigo! acaso te aburriste?";
+    opcion "si" ir_a conversacion:
+}
+
+escena conversacion {
+    decir "Aldeano: Ya veo, te las compro todas. Recibiste 10000 Monedas!";
 }

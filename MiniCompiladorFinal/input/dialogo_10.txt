@@ -1,9 +1,18 @@
 escena inicio {
-    decir "Comienzas tu aventura en Minecraft.";
-    opcion "Ir al bosque" ir_a bosque;
-    opcion "Ir al desierto" ir_a desierto;
+    decir "CAPITULO FINAL";
+    opcion "iniciar" ir_a principio;
 }
 
-escena desierto {
-    decir "El sol quema y el calor es intenso.";
+escena principio {
+    decir "En ese momento... espera ya lo recuerdo, el era, no no no...";
+    opcion "recordar" ir_a recuerdo;
+}
+
+escena recuerdo {
+    decir "FREDY: SI FUI YO JAJAJAJAJAJJAJAJAJAJ";
+    opcion "porque" ir_a razon;
+}
+
+escena razon {
+    decir "porque ya nadie queria cultivar papas pero un extraño como tu... si lo haria, lo seguiras haciendo verdad?";
 }

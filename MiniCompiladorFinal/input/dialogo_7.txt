@@ -1,13 +1,18 @@
 escena inicio {
-    decir "Llegas a un desierto.";
-    opcion "Buscar oasis" ir_a oasis;
-    opcion "Seguir caminando" ir_a templo;
+    decir "Tenemos las suficientes monedas para comprar toda esta aldea, quien diria que el negocio de las papas daria tanto! vamos a la tienda?";
+    opcion "si" ir_a armadura;
 }
 
-escena oasis {
-    decir "Encuentras agua y palmeras.";
+escena armadura {
+    decir "Aldeano: Ahora si tienes dinero o vienes a mirar otra vez?";
+    opcion "si" ir_a comprar;
 }
 
-escena templo {
-    decir "Un templo antiguo aparece frente a ti.";
+escena comprar {
+    decir "Si esta vez tambien vengo a ver... pero ver que no me llevo (tira todas las monedas en la mesa)";
+    opcion "reirse" ir_a aldeano;
+}
+
+escena aldeano {
+    decir "Aldeano: ya decia yo porque Fredy tenia tantas papas, compro todas el comelon";
 }

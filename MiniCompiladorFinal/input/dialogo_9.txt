@@ -1,8 +1,23 @@
 escena inicio {
-    decir "Estás en la playa.";
-    opcion "Construir barco" ir_a mar;
+    decir "Escucho algo, algo? no son muchas cosas... en todas las direcciones!!! (corre)";
+    opcion "correr" ir_a piedras;
 }
 
-escena mar {
-    decir "El mar está tranquilo y azul.";
+escena piedras {
+    decir "(Estamos detras de unas piedras) NO PUEDE SER!!! por lo menos fue millonario por una vez, gracias Fredy siempre te recordare (next)";
+    opcion "next" ir_a siguiente;
+}
+
+escena siguiente {
+    decir "Algo se acerca, (deberiamos sacar nuestro arco, verdad?)";
+    opcion "si" ir_a combate;
+}
+
+escena combate {
+    decir "Sin miedo, yo no tengo miedo (x para salir y apuntar)";
+    opcion "x" ir_a confucion;
+} 
+
+escena confucion {
+    decir "Espera que? (confucion)";
 }

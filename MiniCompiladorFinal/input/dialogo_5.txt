@@ -1,9 +1,13 @@
 escena inicio {
-    decir "Entras a un poblado de aldeanos.";
-    opcion "Comprar herramientas" ir_a tienda;
-    opcion "Salir corriendo" ir_a bosque;
+    decir "Huimos epicamente de los enemigos! y volvimos a la aldea, deberiamos comprar algo.";
+    opcion "visitar tienda" ir_a tienda;
 }
 
 escena tienda {
-    decir "La tienda tiene de todo.";
+    decir "La tienda tiene de todo pero todo esta muy caro, y si robamos algo?";
+    opcion "no" ir_a cultivar;
+}
+
+escena cultivar {
+    decir "Es verdad deberiamos dedicarnos a cultivar papas... literalmente";
 }

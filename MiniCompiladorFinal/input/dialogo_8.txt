@@ -1,8 +1,23 @@
 escena inicio {
-    decir "Te despiertas en una montaña nevada.";
-    opcion "Bajar por el sendero" ir_a valle;
+    decir "Tenemos herramientas, armadura y mucho dinero (deberia retirarme y conseguir una esposa...deberia?)";
+    opcion "no" ir_a pinos;
 }
 
-escena valle {
-    decir "El valle está cubierto de nieve.";
+escena pinos {
+    decir "Es verdad, recuerda!!! me dieron un duro golpe, hasta ahora me duele.";
+    opcion "grita" ir_a decision;
+}
+
+escena decision {
+    decir "No es por ser rencoroso pero la verdad si estoy enojado (que tal si volvemos al bosque de pinos?)";
+    opcion "ir" ir_a verdad;
+}
+
+escena verdad {
+    decir "Que duro golpe hasta que lo recorde no me dolia la cabeza... espera (escucho algo...)";
+    opcion "silencio" ir_a otravez;
+}
+
+escena otravez {
+    decir "Otra vez esta sensacion, esta vez tengo que estar alerta.";
 }
